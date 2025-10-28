@@ -1,0 +1,50 @@
+{
+  "name": "VQF",
+  "version": "2.0.1",
+  "description": "Versatile Quaternion-based Filter for IMU orientation estimation with bias estimation and magnetometer disturbance rejection.",
+  "keywords": [
+    "imu",
+    "orientation",
+    "filter",
+    "ahrs",
+    "quaternion"
+  ],
+  "homepage": "https://github.com/sgrsn/vqf-pio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgrsn/vqf-pio.git"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Laidig",
+      "email": "laidig@control.tu-berlin.de",
+      "url": "https://github.com/dlaidig"
+    }
+  ],
+  "frameworks": "*",
+  "platforms": "*",
+  "build": {
+    "srcDir": "vqf/cpp",
+    "includeDir": "vqf/cpp",
+    "srcFilter": [
+      "+<vqf.cpp>",
+      "+<basicvqf.cpp>",
+      "+<offline_vqf.cpp>"
+    ],
+    "flags": [
+      "-std=c++11"
+    ]
+  },
+  "headers": [
+    "vqf.hpp",
+    "basicvqf.hpp",
+    "offline_vqf.hpp"
+  ],
+  "examples": [
+    {
+      "name": "Basic Usage",
+      "base": "examples/basic_usage"
+    }
+  ]
+}
