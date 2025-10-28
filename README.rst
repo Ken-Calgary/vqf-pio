@@ -35,6 +35,25 @@ The VQF Python package can easily be installed from PyPI via pip, e.g.:
 
 For more information, please refer to the `documentation <https://vqf.readthedocs.io/>`__.
 
+PlatformIO
+----------
+
+This fork adds a ``library.json`` so the C++ implementation can be consumed directly from PlatformIO projects. Add
+
+.. code-block:: ini
+
+    lib_deps =
+        https://github.com/sgrsn/vqf-pio
+
+to your ``platformio.ini`` (inside the desired ``[env:...]`` section). By default the filter is built with double
+precision. You can switch to single precision or disable motion bias estimation via additional ``build_flags``:
+
+.. code-block:: ini
+
+    build_flags =
+        -DVQF_SINGLE_PRECISION          ; use floats instead of doubles
+        -DVQF_NO_MOTION_BIAS_ESTIMATION ; strip motion bias estimation logic
+
 Implementations
 ---------------
 
